@@ -11,15 +11,8 @@ public class RandomNumbersGenerator {
     public Set<Integer> generateRandomNumbers(int howManyNumbers, int minNumber, int maxNumber){
         Set<Integer> generatedNumbers = new HashSet<>();
         while (generatedNumbers.size() < howManyNumbers){
-            int temp = random.nextInt(minNumber + maxNumber);
-            if (isNumberFromRange(temp, minNumber, maxNumber)){
-                generatedNumbers.add(temp);
-            }
+            generatedNumbers.add(random.nextInt(minNumber + maxNumber));
         }
         return generatedNumbers;
-
-    }
-    private boolean isNumberFromRange(int number, int minValue, int maxValue){
-        return number >= minValue || number <= maxValue;
     }
 }
