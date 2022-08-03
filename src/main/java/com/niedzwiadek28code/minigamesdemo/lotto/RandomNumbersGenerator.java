@@ -5,10 +5,9 @@ import java.util.Random;
 import java.util.Set;
 
 public class RandomNumbersGenerator {
-    private final Random random = new Random();
+    private final static Random random = new Random();
 
-
-    public Set<Integer> generateRandomNumbers(int howManyNumbers, int minNumber, int maxNumber){
+    public static Set<Integer> generateRandomNumbers(int howManyNumbers, int minNumber, int maxNumber){
         Set<Integer> generatedNumbers = new HashSet<>();
         while (generatedNumbers.size() < howManyNumbers){
             generatedNumbers.add(random.nextInt(minNumber + maxNumber));
