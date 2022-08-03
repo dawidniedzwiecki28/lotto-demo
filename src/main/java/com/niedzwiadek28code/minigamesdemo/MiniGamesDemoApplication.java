@@ -1,6 +1,6 @@
-package com.niedzwiadek28code.lottodemo;
+package com.niedzwiadek28code.minigamesdemo;
 
-public class LottoDemoApplication {
+public class MiniGamesDemoApplication {
 
     public static void main(String[] args) {
         System.out.println("Hello Lotto Player");

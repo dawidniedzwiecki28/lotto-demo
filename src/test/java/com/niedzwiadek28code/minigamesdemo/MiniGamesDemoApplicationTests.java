@@ -1,10 +1,10 @@
-package com.niedzwiadek28code.lottodemo;
+package com.niedzwiadek28code.minigamesdemo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LottoDemoApplicationTests {
+class MiniGamesDemoApplicationTests {
 
     @Test
     void contextLoads() {
