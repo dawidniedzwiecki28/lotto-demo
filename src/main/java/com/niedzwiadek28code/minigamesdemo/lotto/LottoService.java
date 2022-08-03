@@ -5,14 +5,24 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class LottoService {
-    private Set<Integer> userNumbers = new HashSet<Integer>();
-    private Set<Integer> generatedNumbers = generateNumbers();
+    private final Set<Integer> userNumbers = new HashSet<>();
+    private final Set<Integer> generatedNumbers = generateNumbers();
 
     public Set<Integer> getGeneratedNumbers() {
         return generatedNumbers;
     }
     public Set<Integer> getUserNumbers() {
         return userNumbers;
+    }
+
+    public int getGameResult(){
+        int result = 0;
+
+        for (Integer number : userNumbers){
+            if(generatedNumbers.contains(number))
+                result++;
+        }
+        return result;
     }
 
     public Set<Integer> generateNumbers(){
@@ -32,9 +42,8 @@ public class LottoService {
             Integer userNumber;
             userNumber = getNumber(scanner);
 
-            if(isNotNumberFromRange(userNumber,LottoConfig.LOWER_RANGE,LottoConfig.UPPER_RANGE)) {
+            if(isNotNumberFromRange(userNumber)) {
                 System.out.printf(LottoMessages.NUMBER_OUT_RANGE, LottoConfig.LOWER_RANGE, LottoConfig.UPPER_RANGE);
-                continue;
             }
             else if (userNumbers.contains(userNumber)) {
                 System.out.printf(LottoMessages.NUMBER_DUPLICATE);
@@ -52,7 +61,7 @@ public class LottoService {
         }
         return scan.nextInt();
     }
-    private boolean isNotNumberFromRange(int number, int minValue, int maxValue){
-        return number < minValue || number > maxValue;
+    private boolean isNotNumberFromRange(int number){
+        return number < LottoConfig.LOWER_RANGE || number > LottoConfig.UPPER_RANGE;
     }
 }

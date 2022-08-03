@@ -8,17 +8,27 @@ public class LottoGame implements Game {
 
     @Override
     public void play() {
-        System.out.println(LottoMessages.GAME_INTRODUCTION);
-        System.out.println(LottoMessages.START_MESSAGE);
 
-        //lottoService.getNumbersFromUser();
+        try {
+            // Display introduction message
+            System.out.println(LottoMessages.GAME_INTRODUCTION);
+            Thread.sleep(1500);
+            System.out.println(LottoMessages.START_MESSAGE);
+            Thread.sleep(2000);
 
-        System.out.println("Your numbers are: " + lottoService.getUserNumbers());
-        System.out.println("Winning numbers are: " + lottoService.getGeneratedNumbers());
+            // Get number from user
+            lottoService.getNumbersFromUser();
 
+            // Display user number and winning number
+            System.out.println("\nYour numbers: " + lottoService.getUserNumbers());
+            System.out.println("Winning numbers: " + lottoService.getGeneratedNumbers());
 
-        System.out.println(LottoMessages.DISPLAY_RESULT);
+            // Display game result
+            System.out.println();
+            System.out.printf(LottoMessages.DISPLAY_RESULT, lottoService.getGameResult());
 
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
-
 }

@@ -8,5 +8,4 @@ public class MiniGamesDemoApplication {
         Game game = new LottoGame();
         game.play();
     }
-
 }
