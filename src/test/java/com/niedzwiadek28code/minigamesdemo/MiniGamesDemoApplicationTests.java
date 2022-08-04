@@ -9,5 +9,4 @@ class MiniGamesDemoApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }

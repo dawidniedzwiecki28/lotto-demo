@@ -19,7 +19,7 @@ public class LottoGame implements Game {
             // Get number from user
             lottoService.getNumbersFromUser();
 
-            // Display user number and winning number
+            // Display user numbers and winning numbers
             System.out.println("\nYour numbers: " + lottoService.getUserNumbers());
             System.out.println("Winning numbers: " + lottoService.getGeneratedNumbers());
 
