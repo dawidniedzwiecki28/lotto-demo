@@ -1,5 +1,6 @@
 package com.niedzwiadek28code.minigamesdemo.lotto;
 
+import javax.naming.directory.InvalidAttributeValueException;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;

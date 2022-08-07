@@ -17,7 +17,7 @@ public class LottoGame implements Game {
             Thread.sleep(2000);
 
                 // Get number from user
-            lottoService.getNumbersFromUser();
+            lottoService.retrieveNumbersFromUser();
 
                 // Display user numbers and winning numbers
             System.out.println("\nYour numbers: " + lottoService.getUserNumbers());
