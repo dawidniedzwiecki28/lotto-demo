@@ -5,18 +5,21 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class UserNumbersRetriever {
+    private final Scanner scanner;
+    public UserNumbersRetriever(Scanner scanner) {
+        this.scanner = scanner;
+    }
 
-    static Set<Integer> getNumbersFromUser(int howManyNumbers, int minValue, int maxValue){
+    public Set<Integer> getNumbersFromUser(int howManyNumbers, int minValue, int maxValue){
 
         Set<Integer> userNumbers = new HashSet<>();
-        Scanner scanner = new Scanner(System.in);
 
         while (userNumbers.size() < howManyNumbers){
 
             System.out.printf(LottoMessages.NEXT_NUMBER_MESSAGE, userNumbers.size()+1);
 
             Integer userNumber;
-            userNumber = getIntereger(scanner, userNumbers.size());
+            userNumber = getInteger(scanner, userNumbers.size());
 
             if(isNotNumberFromRange(userNumber, minValue, maxValue)) {
                 System.out.printf(LottoMessages.NUMBER_OUT_RANGE, minValue, maxValue);
@@ -32,14 +35,14 @@ public class UserNumbersRetriever {
 
         return userNumbers;
     }
-    private static Integer getIntereger(Scanner scanner, int userNumbersSize) {
+    private Integer getInteger(Scanner scanner, int userNumbersSize) {
         while (!scanner.hasNextInt()) {
             scanner.next();
             System.out.printf(LottoMessages.NOT_INTEGER, userNumbersSize+1);
         }
         return scanner.nextInt();
     }
-    private static boolean isNotNumberFromRange(int number, int min, int max){
+    private boolean isNotNumberFromRange(int number, int min, int max){
         return number < min || number > max;
     }
 }
