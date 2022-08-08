@@ -35,11 +35,12 @@ class RandomNumbersGeneratorTest {
     public void shouldReturnTrueWhenRandomNumberIsNotLowerThanMinValue(int minNumber, int maxNumber){
             // given
         int numberPool = 1;
-            // when
-        Set<Integer> numbers = generateRandomNumbers(numberPool, minNumber, maxNumber);
-        int temp = numbers.iterator().next();
-            // then
+
         for(int i=0; i<100; i++) {
+            // when
+            Set<Integer> numbers = generateRandomNumbers(numberPool, minNumber, maxNumber);
+            int temp = numbers.iterator().next();
+            // then
             assertFalse(temp < minNumber);
         }
     }
@@ -48,11 +49,12 @@ class RandomNumbersGeneratorTest {
     public void shouldReturnTrueWhenRandomNumberIsNotBiggerThanMaxValue(int minNumber, int maxNumber){
             // given
         int numberPool = 1;
-            // when
-        Set<Integer> numbers = generateRandomNumbers(numberPool, minNumber, maxNumber);
-        int temp = numbers.iterator().next();
-            // then
+
         for(int i=0; i<100; i++) {
+            // when
+            Set<Integer> numbers = generateRandomNumbers(numberPool, minNumber, maxNumber);
+            int temp = numbers.iterator().next();
+            // then
             assertFalse(temp > maxNumber);
         }
     }
@@ -62,6 +64,7 @@ class RandomNumbersGeneratorTest {
                 Arguments.of(1,1),
                 Arguments.of(-6,2),
                 Arguments.of(99,100),
+                Arguments.of(1,99),
                 Arguments.of(-7,-5)
         );
     }
