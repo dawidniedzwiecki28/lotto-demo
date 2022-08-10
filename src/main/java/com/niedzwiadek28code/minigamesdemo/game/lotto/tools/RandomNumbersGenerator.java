@@ -1,4 +1,4 @@
-package com.niedzwiadek28code.minigamesdemo.lotto.tools;
+package com.niedzwiadek28code.minigamesdemo.game.lotto.tools;
 
 import java.util.HashSet;
 import java.util.Random;

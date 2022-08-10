@@ -1,19 +1,14 @@
-package com.niedzwiadek28code.minigamesdemo.lotto.tools;
+package com.niedzwiadek28code.minigamesdemo.game.lotto.tools;
 
-import com.niedzwiadek28code.minigamesdemo.lotto.LottoMessages;
+import com.niedzwiadek28code.minigamesdemo.game.lotto.config.LottoMessages;
 
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
 public class UserNumbersRetriever {
-    private final Scanner scanner;
 
-    public UserNumbersRetriever(Scanner scanner) {
-        this.scanner = scanner;
-    }
-
-    public Set<Integer> getNumbersFromUser(int howManyNumbers, int minValue, int maxValue) {
+    public Set<Integer> getNumbersFromUser(Scanner scanner, int howManyNumbers, int minValue, int maxValue) {
 
         Set<Integer> userNumbers = new HashSet<>();
 

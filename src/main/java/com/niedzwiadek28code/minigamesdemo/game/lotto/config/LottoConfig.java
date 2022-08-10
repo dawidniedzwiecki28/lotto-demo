@@ -1,4 +1,4 @@
-package com.niedzwiadek28code.minigamesdemo.lotto;
+package com.niedzwiadek28code.minigamesdemo.game.lotto.config;
 
 public class LottoConfig {
     public static final int LOWER_RANGE = 1;

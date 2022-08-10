@@ -1,4 +1,4 @@
-package com.niedzwiadek28code.minigamesdemo.lotto;
+package com.niedzwiadek28code.minigamesdemo.game.lotto.config;
 
 public class LottoMessages {
     public static final String GAME_INTRODUCTION = "Welcome in LOTTO game!";
@@ -11,5 +11,5 @@ public class LottoMessages {
     public static final String NOT_INTEGER = "That's not a integer, enter your %d number: ";
     public static final String NUMBER_OUT_RANGE = "Number out of range %d-%d\n";
     public static final String NUMBER_DUPLICATE = "That number is already saved. ";
-    public static final String DISPLAY_RESULT = "You hit %d numbers.\n";
+    public static final String DISPLAY_RESULT = "You hit %d numbers.";
 }
