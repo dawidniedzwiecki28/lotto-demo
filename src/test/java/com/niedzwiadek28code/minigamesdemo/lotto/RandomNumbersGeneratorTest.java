@@ -14,7 +14,7 @@ class RandomNumbersGeneratorTest {
 
     @ParameterizedTest
     @MethodSource("expectedNumberOfRandomNumbersDataProvider")
-    public void shouldReturnExpectedNumberOfRandomNumbers(int numberPool, int minNumber, int maxNumber) {
+    public void should_Fail_When_NumberOfRandomNumbersDifferentThanExpected(int numberPool, int minNumber, int maxNumber) {
             // given
 
             // when
@@ -32,7 +32,7 @@ class RandomNumbersGeneratorTest {
     }
     @ParameterizedTest
     @MethodSource("rangeOfRandomNumbersProvider")
-    public void shouldReturnTrueWhenRandomNumberIsNotLowerThanMinValue(int minNumber, int maxNumber){
+    public void should_Fail_When_RandomNumberIsBiggerThanMinValue(int minNumber, int maxNumber){
             // given
         int numberPool = 1;
 
@@ -46,7 +46,7 @@ class RandomNumbersGeneratorTest {
     }
     @ParameterizedTest
     @MethodSource("rangeOfRandomNumbersProvider")
-    public void shouldReturnTrueWhenRandomNumberIsNotBiggerThanMaxValue(int minNumber, int maxNumber){
+    public void should_Fail_When_RandomNumberIsLowerThanMaxValue(int minNumber, int maxNumber){
             // given
         int numberPool = 1;
 

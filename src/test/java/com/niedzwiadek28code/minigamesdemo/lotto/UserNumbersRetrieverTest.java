@@ -16,7 +16,7 @@ class UserNumbersRetrieverTest {
 
     @ParameterizedTest
     @MethodSource("userInputValueProvider")
-    public void shouldReturnTrueForCorrectUserInputValue(int howManyNumbers, String numbers){
+    public void should_FailGettingNumbersFromUser_When_UserInputIntegersLessThanExpectedPool(int howManyNumbers, String numbers){
             // given
         UserNumbersRetriever userNumbersRetriever =
                 new UserNumbersRetriever(mockScannerIn(numbers));

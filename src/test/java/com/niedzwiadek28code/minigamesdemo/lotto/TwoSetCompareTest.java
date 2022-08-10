@@ -15,7 +15,7 @@ class TwoSetCompareTest {
 
     @ParameterizedTest
     @MethodSource("dataProvider")
-    public void shouldReturnHowManyNumbersAreTheSameInTwoSetCollection(int expectedResult, Set<Integer> winningNumbers, Set<Integer> userNumbers){
+    public void should_Pass_When_TwoSetsContainsExpectedNumberOfTheSameValues(int expectedResult, Set<Integer> winningNumbers, Set<Integer> userNumbers){
             //given
 
             //when
