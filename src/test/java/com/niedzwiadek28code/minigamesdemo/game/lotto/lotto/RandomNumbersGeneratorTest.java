@@ -1,16 +1,19 @@
-package com.niedzwiadek28code.minigamesdemo.lotto;
+package com.niedzwiadek28code.minigamesdemo.game.lotto.lotto;
 
+import com.niedzwiadek28code.minigamesdemo.game.lotto.tools.RandomNumbersGenerator;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.util.Random;
 import java.util.Set;
 import java.util.stream.Stream;
 
-import static com.niedzwiadek28code.minigamesdemo.lotto.RandomNumbersGenerator.generateRandomNumbers;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RandomNumbersGeneratorTest {
+
+    RandomNumbersGenerator generator = new RandomNumbersGenerator(new Random());
 
     @ParameterizedTest
     @MethodSource("expectedNumberOfRandomNumbersDataProvider")
@@ -18,7 +21,7 @@ class RandomNumbersGeneratorTest {
             // given
 
             // when
-        Set<Integer> numbers = generateRandomNumbers(numberPool, minNumber, maxNumber);
+        Set<Integer> numbers = generator.generateRandomNumbers(numberPool, minNumber, maxNumber);
             // then
         assertEquals(numbers.size(), numberPool);
     }
@@ -38,7 +41,7 @@ class RandomNumbersGeneratorTest {
 
         for(int i=0; i<100; i++) {
             // when
-            Set<Integer> numbers = generateRandomNumbers(numberPool, minNumber, maxNumber);
+            Set<Integer> numbers = generator.generateRandomNumbers(numberPool, minNumber, maxNumber);
             int temp = numbers.iterator().next();
             // then
             assertFalse(temp < minNumber);
@@ -52,7 +55,7 @@ class RandomNumbersGeneratorTest {
 
         for(int i=0; i<100; i++) {
             // when
-            Set<Integer> numbers = generateRandomNumbers(numberPool, minNumber, maxNumber);
+            Set<Integer> numbers = generator.generateRandomNumbers(numberPool, minNumber, maxNumber);
             int temp = numbers.iterator().next();
             // then
             assertFalse(temp > maxNumber);

@@ -1,5 +1,6 @@
-package com.niedzwiadek28code.minigamesdemo.lotto;
+package com.niedzwiadek28code.minigamesdemo.game.lotto.lotto;
 
+import com.niedzwiadek28code.minigamesdemo.game.lotto.tools.UserNumbersRetriever;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -19,9 +20,10 @@ class UserNumbersRetrieverTest {
     public void should_FailGettingNumbersFromUser_When_UserInputIntegersLessThanExpectedPool(int howManyNumbers, String numbers){
             // given
         UserNumbersRetriever userNumbersRetriever =
-                new UserNumbersRetriever(mockScannerIn(numbers));
+                new UserNumbersRetriever();
             // when
         Set<Integer> numbersFromUser = userNumbersRetriever.getNumbersFromUser(
+                mockScannerIn(numbers),
                 howManyNumbers,
                 1,
                 99);
