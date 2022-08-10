@@ -7,10 +7,10 @@ import java.util.Set;
 public class RandomNumbersGenerator {
     private final static Random random = new Random();
 
-    public static Set<Integer> generateRandomNumbers(int howManyNumbers, int minNumber, int maxNumber){
+    public Set<Integer> generateRandomNumbers(int howManyNumbers, int minNumber, int maxNumber) {
         Set<Integer> generatedNumbers = new HashSet<>();
 
-        while (generatedNumbers.size() < howManyNumbers){
+        while (generatedNumbers.size() < howManyNumbers) {
             generatedNumbers.add(random.nextInt(maxNumber - minNumber + 1) + minNumber);
         }
         return generatedNumbers;
