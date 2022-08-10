@@ -3,7 +3,7 @@ package com.niedzwiadek28code.minigamesdemo.lotto;
 public class LottoMessages {
     public static final String GAME_INTRODUCTION = "Welcome in LOTTO game!";
     public static final String START_MESSAGE =
-                    "Check your luck!\n" +
+            "Check your luck!\n" +
                     "Give " + LottoConfig.NUMBER_POOL +
                     " different numbers from range " + LottoConfig.LOWER_RANGE +
                     "-" + LottoConfig.UPPER_RANGE;
